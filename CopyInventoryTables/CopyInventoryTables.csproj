@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{683351EE-E107-4E26-BCE0-D19EA73F5BA4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CopyInventoryTables</RootNamespace>
+    <AssemblyName>CopyInventoryTables</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>blue_jay_icon_CM1_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdjustInventoryDLL">
+      <HintPath>..\..\Blue Jay Class Library\AdjustInventoryDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="BOMPartsDLL">
+      <HintPath>..\..\Blue Jay Class Library\BOMPartsDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="CharterInventoryDLL">
+      <HintPath>..\..\Blue Jay Class Library\CharterInventoryDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="DataValidationDLL">
+      <HintPath>..\..\Blue Jay Class Library\DataValidationDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="DateSearchDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Blue Jay Class Library\DateSearchDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="InventoryDLL">
+      <HintPath>..\..\Blue Jay Class Library\InventoryDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="IssuedPartsDLL">
+      <HintPath>..\..\Blue Jay Class Library\IssuedPartsDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="NewEmployeeDLL">
+      <HintPath>..\..\Blue Jay Class Library\NewEmployeeDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="NewEventLogDLL">
+      <HintPath>..\..\Blue Jay Class Library\NewEventLogDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectsDLL">
+      <HintPath>..\..\Blue Jay Class Library\ProjectsDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="ReceivePartsDLL">
+      <HintPath>..\..\Blue Jay Class Library\ReceivePartsDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BOMParts.xaml.cs">
+      <DependentUpon>BOMParts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CopyAdjustInventory.xaml.cs">
+      <DependentUpon>CopyAdjustInventory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CopyCharterInventory.xaml.cs">
+      <DependentUpon>CopyCharterInventory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CopyWarehouseInventory.xaml.cs">
+      <DependentUpon>CopyWarehouseInventory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IssuedParts.xaml.cs">
+      <DependentUpon>IssuedParts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OldAdjustInventoryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldAdjustInventoryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OldBOMPartsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldBOMPartsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OldIssuedPartsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldIssuedPartsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OldProjectsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldProjectsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OldReceivedPartsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldReceivedPartsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OldTWCInventoryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldTWCInventoryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OldWarehouseInventoryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OldWarehouseInventoryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PleaseWait.xaml.cs">
+      <DependentUpon>PleaseWait.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiveParts.xaml.cs">
+      <DependentUpon>ReceiveParts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TWCInventoryClass.cs" />
+    <Compile Include="WPFMessagesClass.cs" />
+    <Page Include="BOMParts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CopyAdjustInventory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CopyCharterInventory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CopyWarehouseInventory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IssuedParts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PleaseWait.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReceiveParts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="OldAdjustInventoryDataSet.xsc">
+      <DependentUpon>OldAdjustInventoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldAdjustInventoryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OldAdjustInventoryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OldAdjustInventoryDataSet.xss">
+      <DependentUpon>OldAdjustInventoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldBOMPartsDataSet.xsc">
+      <DependentUpon>OldBOMPartsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldBOMPartsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OldBOMPartsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OldBOMPartsDataSet.xss">
+      <DependentUpon>OldBOMPartsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldIssuedPartsDataSet.xsc">
+      <DependentUpon>OldIssuedPartsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldIssuedPartsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OldIssuedPartsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OldIssuedPartsDataSet.xss">
+      <DependentUpon>OldIssuedPartsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldProjectsDataSet.xsc">
+      <DependentUpon>OldProjectsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldProjectsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OldProjectsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OldProjectsDataSet.xss">
+      <DependentUpon>OldProjectsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldReceivedPartsDataSet.xsc">
+      <DependentUpon>OldReceivedPartsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldReceivedPartsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OldReceivedPartsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OldReceivedPartsDataSet.xss">
+      <DependentUpon>OldReceivedPartsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldTWCInventoryDataSet.xsc">
+      <DependentUpon>OldTWCInventoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldTWCInventoryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OldTWCInventoryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OldTWCInventoryDataSet.xss">
+      <DependentUpon>OldTWCInventoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldWarehouseInventoryDataSet.xsc">
+      <DependentUpon>OldWarehouseInventoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OldWarehouseInventoryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OldWarehouseInventoryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OldWarehouseInventoryDataSet.xss">
+      <DependentUpon>OldWarehouseInventoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="blue_jay_icon_CM1_icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
